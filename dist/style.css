@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+			box-sizing: inherit;
+}
+
+.rotation-area {
+    height: 25rem;
+    cursor: e-resize;
+    position: relative;
+    width: fit-content;
+}
+
+.rotation-area img {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 25rem;
+    top: 0;
+}
