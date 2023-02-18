@@ -3,6 +3,11 @@ export default class Image360Rotation {
 
 	mouseOnClickXLocation = undefined;
 
+	/*
+	@param identifier: ID of the element that contains the images
+	@param rotationSpeed: Speed how far the mouse must be moved to rotate
+	@param reversed: Reverse the roation
+	 */
 	constructor(identifier, rotationSpeed = 50, reversed = false){
 		this.identifier = identifier
 		this.rotationSpeed = rotationSpeed
