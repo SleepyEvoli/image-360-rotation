@@ -13,7 +13,7 @@ export default class Image360Rotation {
 		this.rotationSpeed = rotationSpeed
 		this.reversed = reversed
 		this.rotationArea = document.querySelector(`#${this.identifier}`)
-		this.images = this.rotationArea.querySelectorAll('img')
+		this.images = this.rotationArea.querySelectorAll('.rotation-image')
 		this.rotateMethod = this.onRotate.bind(this)
 
 		this.images.forEach((el)=>{
