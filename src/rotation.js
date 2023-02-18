@@ -28,7 +28,7 @@ export default class Image360Rotation {
 
 	initListeners(){
 		this.rotationArea.addEventListener('mousedown', (event)=>{
-			this.mouseOnClickXLocation = event.offsetX
+			this.mouseOnClickXLocation = event.screenX
 			this.rotationArea.addEventListener('mousemove', this.rotateMethod)
 		})
 		
