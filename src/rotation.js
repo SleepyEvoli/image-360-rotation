@@ -16,6 +16,8 @@ export default class Image360Rotation {
 		this.images = this.rotationArea.querySelectorAll('.rotation-image')
 		this.rotateMethod = this.onRotate.bind(this)
 
+		
+
 		this.images.forEach((el)=>{
 			el.setAttribute('draggable', false);
 			el.dataset.focused = "0"
