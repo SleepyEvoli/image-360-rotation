@@ -40,6 +40,17 @@ export default class Image360Rotation {
 			this.setDataFocusedToVisibleImage()
 			this.rotationArea.removeEventListener('mousemove', this.rotateMethod)
 		})
+
+		this.rotationArea.addEventListener('touchstart', (event) => {
+            this.mouseOnClickXLocation = event.touches[0].screenX;
+            this.rotationArea.addEventListener('touchmove', this.rotateMethod);
+        })
+
+        this.rotationArea.addEventListener('touchend', (event) => {
+            this.mouseOnClickXLocation = undefined;
+            this.setDataFocusedToVisibleImage();
+            this.rotationArea.removeEventListener('touchmove', this.rotateMethod);
+        })
 		
 		this.rotationArea.addEventListener('mouseleave', (event)=>{
 			this.mouseOnClickXLocation = undefined
@@ -84,7 +95,14 @@ export default class Image360Rotation {
 	}
 	
     onRotate(e){
-        const currentMouseXLocation = e.screenX;
+		let currentMouseXLocation;
+
+        if(e.type === "touchmove") {
+            currentMouseXLocation = e.touches[0].screenX
+        } else {
+            currentMouseXLocation = e.screenX;
+        }
+
         let offset = Math.round(((currentMouseXLocation - this.mouseOnClickXLocation) / this.rotationSpeed))
 
         let focusedIndex = this.getFocusedIndex()
